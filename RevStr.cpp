@@ -1,39 +1,37 @@
-//Accpet the string from user and reverse the string
+//Accept string from user and copy that charcter into another
+//string in reverse order.
 #include<iostream>
 using namespace std;
-///////////////////////////////////
-void StrRev(char *str)
+/////////////////////////////////////
+void StrCpyRev(char *src, char *dest)
 {
-    char *start = str;
-    char *end = str;
-    char temp;
+    char *end = NULL;
+    end = src;
     while(*end != '\0')
     {
         end++;
     }
     end--;
-    while(start < end)
+    while(*src != '\0')
     {
-        temp = *start;
-        *start = *end;
-        *end = temp;
-
-        start++;
+        *dest = *end;
+        dest++;
         end--;
+        src++;
     }
+    *dest = '\0';
 }
-///////////////////////////////////
-//              MAIN             //
-///////////////////////////////////
+//////////////////////////////////////
+//               MAIN               //
+//////////////////////////////////////
 int main()
 {
-    char Arr[30];
+    char Arr[30] = "Marvellous Python";
+    char Brr[30] ;
 
-    cout<<"Enter string : ";
-    cin.getline(Arr,30);
+    StrCpyRev(Arr,Brr);
 
-    StrRev(Arr);
+    cout<<Brr;
 
-    cout<<Arr;
     return 0;
 }
