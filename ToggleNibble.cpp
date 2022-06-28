@@ -1,14 +1,12 @@
-//Accept one Number and position from user
-//toggle that Bit. Return Modified number
+//Accept one Number and toggle first and
+//last Return Modified number
 #include<iostream>
 using namespace std;
 ///////////////////////////////////
-int OnBit(int iNo, int pos)
+int OnBit(int iNo)
 {
-    int iMask = 0X00000001;
+    int iMask = 0XF000000F;
     int iNum = 0;
-
-    iMask = iMask << (pos - 1);
 
     iNum = iNo ^ iMask;
 
@@ -20,16 +18,12 @@ int OnBit(int iNo, int pos)
 int main()
 {
     int iValue = 0;
-    int iPos = 0;
     int iRet = 0;
 
     cout<<"Entre Number : "<<endl;
     cin>>iValue;
 
-    cout<<"Enter position of bit : "<<endl;
-    cin>>iPos;
-
-    iRet = OnBit(iValue,iPos);
+    iRet = OnBit(iValue);
     cout<<"Modified Number is : "<<iRet;
 
     return 0;

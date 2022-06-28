@@ -1,5 +1,5 @@
 //Accept one Number and position from user
-//toggle that Bit. Return Modified number
+//on that Bit. Return Modified number
 #include<iostream>
 using namespace std;
 ///////////////////////////////////
@@ -10,7 +10,7 @@ int OnBit(int iNo, int pos)
 
     iMask = iMask << (pos - 1);
 
-    iNum = iNo ^ iMask;
+    iNum = iNo | iMask;
 
     return iNum;
 }
